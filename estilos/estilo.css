@@ -38,7 +38,7 @@ header ul {
 }
 
 li {
-    width: 25%;
+    width: 20%;
     transition: background-color 0.5s;
     border-radius: 15px;
 }
@@ -61,6 +61,7 @@ h2{
     font-size: 2rem;
     margin: auto;
     margin-top: 20px;
+    color: #dadada;
 }
 p {
     text-align: center;
