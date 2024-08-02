@@ -1,0 +1,486 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* Estilo do corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../imagens/fundo.jpeg");
+    background-size: contain;
+    /*background-image: linear-gradient(to bottom, #FFE9A3, white);*/
+    
+}
+
+/* Estilo do cabeçalho */
+header {
+    height: 50px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    background-color: #FF4400;
+    z-index: 1;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li {
+    width: 25%;
+    transition: background-color 0.5s;
+    border-radius: 15px;
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.123);
+}
+
+a {
+    text-decoration: none;
+    color: #fdfdfd;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+}
+h2{
+    text-align: center;
+    font-size: 2rem;
+}
+p {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+div#amb.container {
+    margin-top: 90px;
+}
+/* Estilo das seções */
+audio {
+    width: 520px;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.quadro_animado {
+    width: 520px;
+    height: 400px;
+    margin: auto;
+    background-size: cover;
+    border-radius: 5%;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-name: muda_imagem;
+}
+
+@keyframes muda_imagem {
+     0% { background-image: url("../imagens/feira_img_01.jpeg"); }
+    20% { background-image: url("../imagens/feira_img_02.jpg"); }
+    40% { background-image: url("../imagens/feira_img_03.jpeg"); }
+    60% { background-image: url("../imagens/feira_img_04.jpeg"); }
+    80% { background-image: url("../imagens/feira_img_05.jpg"); }
+    100% { background-image: url("../imagens/feira_img_01.jpeg"); }
+}
+
+.container{
+    color: #dadada;
+}
+/*.container {
+    padding: 40px;
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}*/
+
+.container h2 {
+    margin-bottom: 20px;
+}
+
+.container p {
+    margin-bottom: 20px;
+}
+
+/* Estilo dos produtos */
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas pequenas */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    transition: transform 0.5s ease, box-shadow 0,5s ease;
+    color: black;
+}
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.301);
+}
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+#banana {
+    margin-bottom: 21px;
+}
+#cardmaca {
+    padding-top: 7px;
+}
+#morango {
+    padding-top: 18px;
+    padding-bottom: 5px;
+}
+#melancia {
+    padding-top: 14px;
+}
+#cardmanga {
+    padding-top: 7px;
+}
+/* Títulos e descrições dos produtos */
+.card h3 {
+    margin-bottom: 20px
+}
+
+.card p {
+    margin-bottom: 20px
+}
+
+/* Botões de produto */
+.card button {
+    background-color: #ff4400;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 75%;
+    margin-top: auto; /* Adiciona espaço entre o botão e os itens acima, mantendo o botão no final */
+    transition: 0.2s;
+}
+
+.card button:hover {
+    background-color: orange;
+}
+label {
+    background-color: #fff;
+    display: inline-block;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    justify-content: space-between; 
+    color: black;
+    margin-top: 15px;
+}
+#dvd.container{
+    width: 80%;
+    margin-left: 50px;
+}
+
+label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+#pas .product {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-left: 40px;
+}
+/*#pas {
+    padding: 40px;
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Adiciona posição relativa para permitir o posicionamento absoluto dos elementos filhos 
+}*/
+
+#pas h2 {
+    margin-bottom: 20px;
+}
+
+#pas p {
+    margin-bottom: 20px;
+}
+
+/* Estilo das cartas de produto na seção Pastéis */
+#pas .card {
+    background-color: #fff;
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas pequenas */
+    align-items: center;
+    display: flex;
+    justify-content: space-between; 
+    position: relative;
+}
+
+#pas .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+#pas .card h3 {
+    margin-bottom: 50px;
+}
+
+#pas .card p {
+    margin-bottom: 20px;
+}
+
+#pas form {
+    position: absolute; 
+    bottom: 20px; 
+    width: 90%; 
+}
+
+#pas form label {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#pas form select {
+    width: 100%; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.carrinhoimg img {
+    width: 300px;
+    display: flex;
+    align-self: center;
+    animation: carrinho 7s ease-in-out infinite;
+}
+@keyframes carrinho {
+    0%,100%{
+        transform:translateX(0)
+    }
+    50%{
+         transform: translateX(550px)
+        }
+}
+
+/* Estilo do carrinho de compras */
+#cart {
+    list-style: none;
+    padding: 0;
+}
+
+#cart li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+#cart li button {
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#cart li button:hover {
+    background-color: #ff4b3e;
+}
+
+/* Estilo do total e botão de finalizar compra */
+#total {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: green;
+}
+
+#checkoutButton {
+    background-color: #ff4400;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px 0;
+    transition: 0.2s;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+#checkoutButton:hover {
+    background-color: green;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: rgba(51, 51, 51, 0.555);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Estilo da modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 25%;
+}
+
+.modal-content,
+#caption {
+    animation: zoom 0.4s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+}
+
+/* Estilo dos labels e checkboxes */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px;
+    background-color: blueviolet;
+}
+
+.checkbox-container label {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Media Query para telas maiores que 768px */
+@media (max-width: 768px) {
+   
+}
+
+/* Estilo específico da seção DVD */
+/*#dvd {
+    padding: 40px;
+    background-color: white;
+    margin: 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}*/
+
+#dvd h2 {
+    margin-bottom: 20px;
+}
+
+#dvd p {
+    margin-bottom: 20px;
+}
+
+#dvd .product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+#dvd .product div {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 200px;
+    flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas pequenas */
+}

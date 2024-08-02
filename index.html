@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilos/estilo.css" />
+    <link rel="icon" href="imagens/icone.png" />
+    <title>Feira virtual</title>
+
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="#top">Ambiente</a></li>
+            <li><a href="#fru">Frutas</a></li>
+            <li><a href="#pas">Pastel</a></li>
+            <li><a href="#dvd">Dvd's</a></li>
+        </ul>
+    </header>
+    <div class="container" id= "amb">
+        <h2>Ambiente</h2>
+        <p>Bem vindo(a) a nossa feira virtual, aqui você pode comprar diversos produtos assim como uma feira de rua. <br>
+        Esta seção contém uma animação e um áudio ambiente para que você possa se sentir como se realmente estivesse numa feira.</p>
+        <audio src="imagens/Som Ambiente de feira.mp3" controls></audio>
+        <div class="conteudo" id="ani">
+            <div class="quadro_animado"></div>
+        </div>
+    </div> 
+    <div class="container" id = "fru">
+        <h2>Frutas</h2>
+        <p>Aqui é a nossa seção de frutas, fique à vontade para comprar quantas quiser, todos os produtos comprados serão exibidos no carrinho ao final da página 
+        </p>
+        <div class="product">
+            <div class="card">
+                <img src="imagens/banana.png" alt="Banana" id="banana">
+                <h3>Banana</h3>
+                <p>R$7,00 (6 unid)</p>
+                <button onclick="addToCart('Banana', 7.00)">comprar</button>
+            </div>
+
+            <div class="card" id="cardmaca">
+                <img src="imagens/maça1.png" alt="Maçã" id="maca">
+                <h3>Maçã        </h3>
+                <p>R$1,00        </p>
+                <button onclick="addToCart('Maçã', 1.00)">comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="imagens/laranja.png" alt="Laranja" id="laranja">
+                <h3>Laranja</h3>
+                <p>R$2,00 </p>
+                <button onclick="addToCart('Laranja', 2.00)">comprar</button>
+            </div>
+         
+            <div class="card" id="cardmorango">
+                <img src="imagens/morango.png" alt="Morango" id="morango">
+                <h3>Morango</h3>
+                <p>R$12,00 (10 unid)</p>
+                <button onclick="addToCart('Morango', 12.00)">comprar</button>
+            </div>
+
+            <div class="card">
+                <img src="imagens/melancia.png" alt="Melancia" id="melancia">
+                <h3>Melancia</h3>
+                <p>R$13,00</p>   
+                <button onclick="addToCart('Melancia', 13.00)">comprar</button>  
+            </div>
+
+            <div class="card" id="cardmanga">
+                <img src="imagens/Manga1.png"  alt="Manga" id="manga">
+                <h3>Manga</h3> 
+                <p>R$6,50</p>
+                <button onclick="addToCart('Manga', 6.50)">comprar</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" id = "pas">
+        <h2>Pasteis</h2>
+        <p>Assim como na feira, aqui você também pode comprar pasteis e caldos de cana dos mais variados sabores, apenas selecione o sabor desejado que ele será automaticamente adicionado ao seu carrinho
+        </p>
+        <div class="product">
+        <div class="card">
+            <img src="imagens/pastel.png" alt="Pastel">
+            <h3>Pastel</h3> 
+            <p>R$6,00</p>
+            <form action="get">
+                <label for="productSelect">Selecione uma opção:</label>
+                <select id="productSelect" onchange="handleSelect(this)">
+                <option value="" selected disabled>Sabor...</option>
+                <option value="car" data-product="Pastel de Carne" data-price="6.00"> Pastel de Carne</option>
+                <option value="que" data-product="Pastel de Queijo" data-price="6.00"> Pastel de Queijo</option>
+                <option value="ccq" data-product="Pastel de Carne c/ queijo" data-price="6.00"> Pastel de Carne c/ queijo</option>
+                <option value="fcq" data-product="Pastel de Frango c/ catupiry" data-price="6.00"> Pastel de Frango c/ catupiry</option>
+                <option value="piz" data-product="Pastel de Pizza" data-price="6.00"> Pastel de Pizza</option>
+                <option value="bau" data-product="Pastel de Bauru" data-price="6.00"> Pastel de Bauru</option>
+            </select>
+            </form>            
+        </div>
+        <div class="card" >
+                <img src="imagens/caldo de cana.png" alt="caldo de cana">
+                <h3>Caldo de cana</h3>
+                <p>R$4,00 (500ml)</p>
+                <form action="get">
+                    <label for="productSelect">Selecione uma opção:</label>
+                    <select id="productSelect" onchange="handleSelect(this)">
+                    <option value="" selected disabled>Sabor...</option>
+                    <option value="pur" data-product="Caldo de cana puro" data-price="4">Caldo de cana simples </option>
+                    <option value="lim" data-product="Caldo de cana com limão " data-price="4">Caldo de cana com limão</option>
+                    <option value="aba" data-product="Caldo de cana com abacaxi" data-price="4">Caldo de cana com Abacaxi</option>
+                    <option value="lar" data-product="Caldo de cana com laranja" data-price="4">Caldo de cana com Laranja</option>
+                    <option value="mar" data-product="caldo de cana com maracuja" data-price="4">Caldo de cana com Maracujá</option>
+                    <option value="hor" data-product="Caldo de cana com hortelã" data-price="4">Caldo de cana com Hortelã</option>
+                    <option value="gen" data-product="Caldo de cana com gengibre" data-price="4">Caldo de cana com Gengibre</option>
+                </select>
+                </form>
+        </div> 
+        <div class="carrinhoimg"><img src="imagens/carrinho de compras.png" alt="carrinho de compras"></div>
+    </div>
+</div>
+    <div class="container" id = "dvd">
+        <h2>Dvd's</h2>
+        <form method="get"> 
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Pulp Fiction ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a primeira modal -->
+                <span class="myText" data-img-id="hiddenImg1" style="cursor: pointer;">
+                    Pulp Fiction
+                </span>
+                <img id="hiddenImg1" src="imagens/pulp_fiction.jpeg" alt="Pulp Fiction" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Divertidamente 2 ', 7.00)">  
+            
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg2" style="cursor: pointer;">
+                    divertidamente 2
+                </span>
+                <img id="hiddenImg2" src="imagens/divertidamente_2.jpeg" alt="Divertidamente 2" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Shrek 5 ', 7.00)"> 
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg3" style="cursor: pointer;">
+                    Shrek 5
+                </span>
+                <img id="hiddenImg3" src="imagens/shrek_5.jpeg" alt="Shrek 5" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Curtinho a vida adoidado ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg4" style="cursor: pointer;">
+                    Curtindo a vida adoidado
+                </span>
+                <img id="hiddenImg4" src="imagens/curtindo a vida adoidado.jpeg" alt="Curtindo a vida adoidado" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd As branquelas ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg5" style="cursor: pointer;">
+                    As Branquelas
+                </span>
+                <img id="hiddenImg5" src="imagens/as_branquelas.jpeg" alt="As branquelas" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd De volta pro futuro ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg6" style="cursor: pointer;">
+                    De volta pro futuro
+                </span>
+                <img id="hiddenImg6" src="imagens/de_volta_pro_futuro.jpeg" alt="De volta pro futuro" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Homem-aranha ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg7" style="cursor: pointer;">
+                    Homem-aranha
+                </span>
+                <img id="hiddenImg7" src="imagens/homem-aranha.jpeg" alt="Homem-aranha" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Titanic ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg8" style="cursor: pointer;">
+                    Titanic
+                </span>
+                <img id="hiddenImg8" src="imagens/titanic.jpeg" alt="Titanic" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd Brilho eterno de uma mente sem lembranças ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg9" style="cursor: pointer;">
+                    Brilho eterno de uma mente sem lembranças
+                </span>
+                <img id="hiddenImg9" src="imagens/brilho_eterno_de_uma mente sem lembranças.jpeg" alt="Brilho eterno de uma mente sem lembranças" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd O silêncio dos inocentes ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg10" style="cursor: pointer;">
+                    O silêncio dos inocentes
+                </span>
+                <img id="hiddenImg10" src="imagens/o_silencio_dos_inocentes.jpeg" alt="O silêncio dos inocentes" style="display:none;">
+            </label>
+            <label>
+                <input type="checkbox" onclick="addToCartCheckbox(this, 'Dvd O iluminado ', 7.00)">
+                <!-- Texto de gatilho e imagem escondida para a segunda modal -->
+                <span class="myText" data-img-id="hiddenImg11" style="cursor: pointer;">
+                    O iluminado
+                </span>
+                <img id="hiddenImg11" src="imagens/o_iluminado.jpeg" alt="O iluminado" style="display:none;">
+            </label>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Carrinho de Compras</h2>
+            <ul id="cart"></ul>
+            <h2>Total: R$ <span id="total">0.00</span></h2>
+            <button id="checkoutButton" onclick="finalizePurchase()">Finalizar Compra</button>
+    </div>
+    <footer>
+        <p>Feira Virtual &copy; Desenvolvido por Gustavo Ribeiro</p>
+    </footer>
+    <!-- A Modal -->
+    <div id="myModal" class="modal">
+        <!-- Conteúdo da Modal -->
+        <span class="close">&times;</span>
+        <img class="modal-content" id="imgModal">
+        <div id="caption"></div>
+    </div>
+    <script src="scripts/scripts.js"></script>
+</body>
+</html>
