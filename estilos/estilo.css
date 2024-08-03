@@ -93,10 +93,10 @@ audio {
 
 @keyframes muda_imagem {
      0% { background-image: url("../imagens/feira_img_01.jpeg"); }
-    20% { background-image: url("../imagens/feira_img_02.jpg"); }
-    40% { background-image: url("../imagens/feira_img_03.jpeg"); }
-    60% { background-image: url("../imagens/feira_img_04.jpeg"); }
-    80% { background-image: url("../imagens/feira_img_05.jpg"); }
+     20% { background-image: url("../imagens/feira_img_02.jpg"); }
+     40% { background-image: url("../imagens/feira_img_03.jpeg"); }
+     60% { background-image: url("../imagens/feira_img_04.jpeg");}
+     80% { background-image: url("../imagens/feira_img_05.jpg"); }
     100% { background-image: url("../imagens/feira_img_01.jpeg"); }
 }
 
@@ -193,7 +193,7 @@ audio {
 .card button:hover {
     background-color: orange;
 }
-label {
+#dvd label {
     background-color: #fff;
     display: inline-block;
     border: 1px solid #ddd;
@@ -211,7 +211,7 @@ label {
     margin-left: 50px;
 }
 
-label:hover {
+#dvd label:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -219,7 +219,7 @@ label:hover {
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    margin-left: 40px;
+    margin-left: 16.8%;
 }
 /*#pas {
     padding: 40px;
@@ -248,7 +248,7 @@ label:hover {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 200px;
-    flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas pequenas */
+    
     align-items: center;
     display: flex;
     justify-content: space-between; 
@@ -261,7 +261,7 @@ label:hover {
     border-radius: 8px;
 }
 #pas .card h3 {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 
 #pas .card p {
@@ -269,7 +269,7 @@ label:hover {
 }
 
 #pas form {
-    position: absolute; 
+     
     bottom: 20px; 
     width: 90%; 
 }
@@ -294,10 +294,10 @@ label:hover {
 }
 @keyframes carrinho {
     0%,100%{
-        transform:translateX(0)
+        transform:translateX(-50px)
     }
     50%{
-         transform: translateX(550px)
+         transform: translateX(450px)
         }
 }
 
@@ -448,10 +448,9 @@ footer {
     color: #333;
 }
 
-/* Media Query para telas maiores que 768px */
+/* Media Query para telas menores que 768px */
 @media (max-width: 768px) {
-   
-}
+
 
 /* Estilo específico da seção DVD */
 /*#dvd {
@@ -486,4 +485,62 @@ footer {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 200px;
     flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas pequenas */
+}
+@keyframes carrinho {
+    0%,100%{
+        transform:translateX(0)
+    }
+    50%{
+         transform: translateX(200px)
+        }
+}
+audio {
+    width: 80%;
+    display: block;
+    margin: auto;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.quadro_animado {
+    width: 80%;
+    margin: auto;
+    background-size: cover;
+    border-radius: 5%;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-name: muda_imagem;
+}
+
+.carrinhoimg img {
+    width: 150px;
+    display: flex;
+    align-self: center;
+    animation: carrinho 7s ease-in-out infinite;
+}
+@keyframes carrinho {
+    0%,100%{
+        transform:translateX(-150px)
+    }
+    50% {
+        transform: translateX(100px)
+    }
+}
+#pas .card{
+    height: 320px;
+    padding-top: 0;
+    margin-left: 0;
+}
+#pas .card span {
+    display: none;
+}
+#pas .product {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.modal-content {
+    width: 70%;
+}
 }
