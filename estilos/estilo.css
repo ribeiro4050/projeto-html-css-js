@@ -10,7 +10,8 @@
 body {
     font-family: Arial, sans-serif;
     background-image: url("../imagens/fundo.jpeg");
-    background-size: contain;
+    background-size: cover;
+    background-attachment: fixed;
     /*background-image: linear-gradient(to bottom, #FFE9A3, white);*/
     
 }
@@ -542,5 +543,8 @@ audio {
 
 .modal-content {
     width: 70%;
+}
+#cart li {
+    width: 50%;
 }
 }
